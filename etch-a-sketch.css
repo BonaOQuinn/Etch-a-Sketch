@@ -1,0 +1,23 @@
+/*etch-a-sketch.css */
+
+body {
+    margin: 0;
+    background-color: gray;
+}
+
+
+.grid-cont {
+    background-color: rgb(240, 240, 240);
+    margin: 0 auto;
+    width: 800px;
+    border-style: solid;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-items {
+    border-style: solid;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+}
