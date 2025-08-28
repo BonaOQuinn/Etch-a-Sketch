@@ -14,6 +14,22 @@ for (let i = 0; i < 16; ++i) {
     }
 }
 
+/*When the users mouse hovers over a box, it will change to black. Giving the etch-a-sketch effect
+ */
+
+//this selects all the elements with the grid-item class and stores them in a node list
+let boxes = document.querySelectorAll(".grid-items");
+
+boxes.forEach(box => {
+    box.addEventListener("mouseover", event => {
+        event.target.style.backgroundColor = "hsl(0, 0%, 0%)";
+    });
+})
+
+
+
+
+
 
 
 
