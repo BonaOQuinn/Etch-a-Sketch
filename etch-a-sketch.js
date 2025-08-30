@@ -28,6 +28,44 @@ boxes.forEach(box => {
 
 
 
+/*New branch => featureBranch created for practice */
+
+/* 
+A new feature incoming: 
+This feautre will allow the user to click on the button newGrid and input a number between 1-100. 
+Then a new grid will be created with the dimensions the user inputs. NxN.
+*/
+
+
+/*
+Psuedo: 
+-create button above grid for user input.
+
+-when button is clicked a popup will appear asking the user to input a number between 1-100.
+    -create variables newRow / newCol and store userInput in them.
+    -calculate new height/width for each box by dividing 800 by the number the user inputs.
+    -create new grid with nested for loop updating the boxes height/width
+    -update height/width for each box
+-display new grid on screen. 
+*/
+
+
+const btn = document.querySelector(".button-cont"); 
+
+btn.addEventListener("click", () => {
+    newRowCol = window.prompt("Please enter the new dimensions for the grid: e.g 10"); 
+
+    for (let i = 0; i < newRowCol; ++i){
+        for (let j = 0; j < newRowCol; ++j){
+            let gridBox = document.createElement("div"); 
+            gridBox.classList.toggle("grid-items");
+            gridBox.setAttribute("style", "width: 800/newRowCol; height: 800/newRowcol;"); 
+            container.appendChild(gridBox); 
+
+        }
+    }
+
+})
 
 
 
