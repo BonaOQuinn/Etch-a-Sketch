@@ -59,7 +59,16 @@ const btn = document.querySelector(".button-cont");
 
 btn.addEventListener("click", () => {
     
+    /*only accepts number between 1-100 */
     newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10")); 
+        let askAgain = () => {
+            if(newRowCol > 100) {
+                newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10"));
+                askAgain(); //recursive statment
+            }
+        }
+
+        askAgain(); 
 
     /*while the first child of an element exists, container.removeChild removes it. */
     let removeGrid = (parent) => {
