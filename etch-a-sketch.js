@@ -53,13 +53,17 @@ Psuedo:
 const btn = document.querySelector(".button-cont"); 
 
 btn.addEventListener("click", () => {
-    newRowCol = window.prompt("Please enter the new dimensions for the grid: e.g 10"); 
+    newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10")); 
+    
+    newBox = 800/newRowCol;
 
     for (let i = 0; i < newRowCol; ++i){
         for (let j = 0; j < newRowCol; ++j){
             let gridBox = document.createElement("div"); 
             gridBox.classList.toggle("grid-items");
-            gridBox.setAttribute("style", "width: 800/newRowCol; height: 800/newRowcol;"); 
+            gridBox.style.width = newBox + "px"; 
+            gridBox.style.height = newBox + "px";
+
             container.appendChild(gridBox); 
 
         }
