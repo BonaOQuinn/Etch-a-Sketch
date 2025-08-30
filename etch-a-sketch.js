@@ -63,7 +63,7 @@ btn.addEventListener("click", () => {
     newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10")); 
         let askAgain = () => {
             if(newRowCol > 100) {
-                newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10"));
+                newRowCol = parseInt(window.prompt("Please enter a number between 1-100."));
                 askAgain(); //recursive statment
             }
         }
