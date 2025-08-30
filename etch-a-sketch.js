@@ -61,6 +61,7 @@ btn.addEventListener("click", () => {
     
     newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10")); 
 
+    /*while the first child of an element exists, container.removeChild removes it. */
     let removeGrid = (parent) => {
         while(container.firstChild) {
             container.removeChild(container.firstChild)
@@ -87,6 +88,15 @@ btn.addEventListener("click", () => {
 
         }
     }
+
+    let newBoxes = document.querySelectorAll(".grid-items"); 
+    newBoxes.forEach(box => {
+    box.addEventListener("mouseover", event => {
+        event.target.style.backgroundColor = "hsl(0, 0%, 0%)";
+    });
+})
+
+
 
 })
 
