@@ -1,16 +1,20 @@
 /*etch-a-sketch.js */
 
 //container for 16x16 grid
-let container = document.querySelector(".grid-cont"); 
+let container = document.querySelector("#main-cont"); 
+
+let ogCont = document.createElement("div");
+ogCont.classList.toggle("grid-cont")
+container.appendChild(ogCont); 
 
 
 
-
+let gridCont = document.querySelector(".grid-cont");
 for (let i = 0; i < 16; ++i) {
     for (let j = 0; j < 16; ++j) {
         let gridBox = document.createElement("div"); 
         gridBox.classList.toggle("grid-items");
-        container.appendChild(gridBox); 
+        gridCont.appendChild(gridBox); 
     }
 }
 
@@ -46,6 +50,7 @@ Psuedo:
     -calculate new height/width for each box by dividing 800 by the number the user inputs.
     -create new grid with nested for loop updating the boxes height/width
     -update height/width for each box
+-remove old grid
 -display new grid on screen. 
 */
 
@@ -53,8 +58,22 @@ Psuedo:
 const btn = document.querySelector(".button-cont"); 
 
 btn.addEventListener("click", () => {
-    newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10")); 
     
+    newRowCol = parseInt(window.prompt("Please enter the new dimensions for the grid: e.g 10")); 
+
+    let removeGrid = (parent) => {
+        while(container.firstChild) {
+            container.removeChild(container.firstChild)
+        }
+    }
+
+    removeGrid(container); 
+
+    let newGrid = document.createElement("div"); 
+    newGrid.classList.toggle("grid-cont");
+    container.appendChild(newGrid); 
+
+    let newCont = document.querySelector(".grid-cont");
     newBox = 800/newRowCol;
 
     for (let i = 0; i < newRowCol; ++i){
@@ -64,7 +83,7 @@ btn.addEventListener("click", () => {
             gridBox.style.width = newBox + "px"; 
             gridBox.style.height = newBox + "px";
 
-            container.appendChild(gridBox); 
+            newCont.appendChild(gridBox); 
 
         }
     }
