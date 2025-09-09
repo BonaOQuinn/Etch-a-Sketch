@@ -55,7 +55,7 @@ Psuedo:
 */
 
 
-const btn = document.querySelector(".button-cont"); 
+const btn = document.querySelector("#newGrid"); 
 
 btn.addEventListener("click", () => {
     
@@ -104,17 +104,22 @@ btn.addEventListener("click", () => {
         event.target.style.backgroundColor = "hsl(0, 0%, 0%)";
     });
 })
-
-
-
 })
 
+let newColor = document.querySelector("#color-picker"); 
 
+newColor.addEventListener("input", (event) => {
 
+        userColor = event.target.value; 
 
+    let newBoxes = document.querySelectorAll(".grid-items"); 
 
+    newBoxes.forEach(box => {
+        box.addEventListener("mouseover", event => {
+            event.target.style.backgroundColor = userColor; 
+        })
+    })
 
-
-
+})
 
 
