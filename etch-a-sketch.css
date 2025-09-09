@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 25px;
+    gap: 50px;
 }
 
 .grid-cont {
@@ -35,8 +36,14 @@ button {
     border: none;
     border-radius: 5px;
     padding: 8px 6px;
-    background-color: aquamarine;
+    background-color: rgb(127, 255, 253);
 }
 
 
-
+#color-picker {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); 
+    padding: 20px;
+    height: 46px; 
+    width: 120px; 
+    border-radius: 10px;
+}
